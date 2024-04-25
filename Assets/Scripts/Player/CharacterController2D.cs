@@ -32,6 +32,10 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         UpdateIsGrounded();
 
         HandleHorizontalMovement();
